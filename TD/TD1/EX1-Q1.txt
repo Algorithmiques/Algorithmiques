@@ -1,0 +1,24 @@
+# Question(1): Écrire un programme qui permute circulairement les valeurs de trois variables a, b et c.
+
+Algorithme Permutation_Circulaire
+Variables
+    a, b, c, temp: Entiers
+    
+Début
+    #Lire les variables a, b et c:
+    Ecrire("Donner la valeur de a: ")
+    Lire(a)
+    Ecrire("Donner la valeur de b: ")
+    Lire(b)
+    Ecrire("Donner la valeur de c: ")
+    Lire(c)
+
+    #Effectuer la permutation circulaire:
+    temp <-- b
+    b <-- a
+    a <-- c
+    c <-- temp
+
+    #Écrire la resultat:
+    Ecrire(a, b, c)
+Fin

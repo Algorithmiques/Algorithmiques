@@ -1,0 +1,19 @@
+# Calculer x^n
+Algorithme Puisance
+Variables
+	x, n, resultat : Entiers
+
+Dèbut
+	Ecrire("Donner la valeur de x: ")
+	Lire(x)
+	Ecrire("Donner la valeur de n: ")
+	Lire(n)
+
+	resultat <-- 1
+
+	Pour i de 1 à n faire:
+		resultat <-- resultat * x
+	Fin Pour
+
+	Ecrire(resultat)
+Fin

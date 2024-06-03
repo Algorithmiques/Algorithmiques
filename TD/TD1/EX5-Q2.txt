@@ -1,0 +1,56 @@
+#Écrire un algorithme permettant d'effectuer la somme et le produit de deux matrices 𝐴(𝑛,𝑚) et 𝐵(𝑚,𝑝).
+Algorithm somme_produit_matrices(A, B):
+Variables:
+    n, m, p, i, j, k : entiers
+    Tableau A[ , ], B[ , ], C[ , ] : Entiers
+Début
+    Ecrire("Donner le nombre de lignes de la matrice A : ")
+    Lire(n)
+    Ecrire("Donner le nombre de colonnes de la matrice A : ")
+    Lire(m)
+    Reduimensionner A[n, m]
+    Ecrire("Donner le nombre de lignes de la matrice B : ")
+    Lire(m)
+    Ecrire("Donner le nombre de colonnes de la matrice B : ")
+    Lire(p)
+    Reduimensionner B[m, p]
+
+#Produit de deux matrices :
+    Si m != p Alors
+        Ecrire("Impossible de multiplier les matrices")
+    Sinon
+        Pour i de 1 à n faire
+            Pour j de 1 à p faire
+                C[i, j] <-- 0
+                Pour k de 1 à m faire
+                    C[i, j] <-- C[i, j] + A[i, k] * B[k, j]
+                Fin Pour
+            Fin Pour
+        Fin Pour
+        Ecrire("La somme des deux matrices est : ")
+        Pour i de 1 à n faire
+            Pour j de 1 à p faire
+                Ecrire(C[i, j])
+            Fin Pour
+            Ecrire("\n")
+        Fin Pour
+    Fin Si
+
+#Somme de deux matrices :
+    Si n != m Alors
+        Ecrire("Impossible de sommer les matrices")
+    Sinon
+        Pour i de 1 à n faire
+            Pour j de 1 à m faire
+                C[i, j] <-- A[i, j] + B[i, j]
+            Fin Pour
+        Fin Pour
+        Ecrire("La somme des deux matrices est : ")
+        Pour i de 1 à n faire
+            Pour j de 1 à m faire
+                Ecrire(C[i, j])
+            Fin Pour
+            Ecrire("\n")
+        FinPour
+    FinSi
+Fin 

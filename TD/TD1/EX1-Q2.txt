@@ -1,0 +1,24 @@
+# Question: Ecrire un programme qui lit l'heure et les minutes et affiche l'heure qu'il sera une minute plus tard.
+
+Algorithme MinutePlusTard
+Variables
+	heure, minutes : Entiers
+
+Dèbut
+	#Lire l'heure et les minutes
+	Ecrire("Donner l'heure: ")
+	Ecrire("Donner les minutes: ")
+	Si heure >= 0 && heure <= 23 && minutes >= 0 && minutes <= 59 Alors :
+		minutes <-- minutes + 1
+		Si minutes <-- 60:
+			heure <-- heure + 1
+			minutes <-- 0
+			Si heure = 24:
+				heure <-- 0
+			Fin Si
+		Fin Si
+		Ecrire("Dans une minute, il sera", heure, "heure(s)", minutes, "minute(s)")
+	Sinon:
+		Ecrire("L'heure doit être entre 0 et 23 et les minutes devons être entre 0 et 59")
+	Fin Si
+Fin

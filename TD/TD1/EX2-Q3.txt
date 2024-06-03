@@ -1,0 +1,27 @@
+# Methode 1: utilisant une boucle
+
+Algorithme somme_puissances_2
+	Variables:
+		n, somme, i: Entiers
+
+Dèbut
+	Ecrire("Donner la valeur de n: ")
+	Lire(n)
+	somme <-- 0
+	Pour i de 0 à n+1 faire:
+		somme <-- somme + 2**i
+	Fin Pour
+	Ecrire(somme)
+Fin
+
+# Methode 2: utilisant la formule de la somme des puissances de 2
+Algorithme somme_puissances_2
+Variables:
+	n, somme: Entiers
+ 
+Dèbut
+	Ecrire("Donner la valeur de n: ")
+	Lire(n)
+	somme <-- 2**(n + 1) - 1
+	Ecrire(somme)
+Fin

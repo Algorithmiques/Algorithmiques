@@ -1,0 +1,15 @@
+#Écrire un algorithme permettant à l'utilisateur de saisir les éléments d'une matrice carrée 𝑀
+Algorithme saisie_matrice_carrée
+Variables
+    Tableau M[] : Entiers
+    n, i, j : Entiers
+Début
+    Ecrire("Donner la taille de la matrice carrée : ")
+    Lire(n)
+    Pour i <-- 1 à n Faire
+        Pour j <-- 1 à n Faire
+            Ecrire("Donner l'élément M[", i, ",", j, "] : ")
+            Lire(M[i,j])
+        Fin Pour
+    Fin Pour
+Fin

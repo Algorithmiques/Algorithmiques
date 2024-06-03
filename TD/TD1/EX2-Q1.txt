@@ -1,0 +1,24 @@
+# Methode 1: utilisant une boucle
+Algorithme SommeBoucle
+Variables
+	n, somme, i: Entier
+
+Dèbut
+	Ecrire("Donner la valeur de n: ")
+	somme <-- 0
+	Pour i de 1 à n+1 faire:
+		somme <-- somme + i
+	Fin Pour
+	Ecrire(somme)
+Fin
+
+
+# Methode 2: utilisant la formule des nombres triangulaire
+Algorithme SommeTriangulaire
+Variables
+	n, somme: Entier
+Dèbut
+	Ecrire("Donner la valeur de n: ")
+	somme <-- n*(n+1)/2
+	Ecrire(somme)
+Fin

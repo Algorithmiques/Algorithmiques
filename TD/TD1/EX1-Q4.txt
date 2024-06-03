@@ -1,0 +1,68 @@
+# Question: Ecrire un programme qui demande à l’utilisateur de saisir deux entiers naturels n et p et qui affiche la valeur de C(n,p).
+# Methode 1: (sans utiliser la fonction factoriel)
+
+Algorithm C(n,p):
+Variables:
+	i, n, p, n_factoriel, p_factoriel, np_factoriel, resultat: Entiers
+
+Dèbut
+	Ecrire("Donner la valeur de p: ")
+	Ecrire("Donner la valeur de n: ")
+
+	Si n < 0 Ou p < 0 Ou n < p:
+		Ecrire("p et n doit être des entiers naturel et n doit être superieur ou égale p")
+	Sinon:
+		n_factoriel = 1
+		Si n != 0 && n != 1:
+			Pour i de 1 à n+1 faire:
+				n_factoriel <-- n_factoriel * i
+			Fin Pour
+		Fin Si
+		p_factoriel <-- 1
+
+		Si p != 0 && p != 1:
+			Pour i de 1 à p+1 faire:
+				p_factoriel <-- p_factoriel * i
+			Fin Pour
+		Fin Si
+		np_factoriel <-- 1
+
+		Si n-p != 0 && n-p != 1:
+			Pour i de 1 à n-p+1 faire:
+				np_factoriel <-- np_factoriel * i
+			Fin Pour
+		Fin Si
+		resultat <-- n_factoriel / (p_factoriel * np_factoriel)
+	Fin Si
+		Ecrire(resultat)
+Fin
+ 
+
+
+# Methode 2: (en utilisant la fonction factoriel)
+Algorithm Factoriel:
+
+	Fonction factoriel(n): Entier
+		Variables:
+			i, n: Entiers
+		Pour i de 2 à n faire:
+			n <-- n * i
+		Fin Pour
+		returne n
+
+Variables:
+	n, p, resultat: Entiers
+
+Dèbut
+	Ecrire("Donner la valeur de p: ")
+	Lire(p)
+	Ecrire("Donner la valeur de n: ")
+	Lire(n)
+ 
+	Si n < 0 Ou p < 0 Ou n < p:
+		Ecrire("p et n doit être des entiers naturel et n doit être superieur ou égale p")
+	Sinon:
+		resultat <-- factoriel(n) / (factoriel(p) * factoriel(n-p))
+		Ecrire(resultat)
+	Fin Si
+Fin

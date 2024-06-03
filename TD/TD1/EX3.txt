@@ -1,0 +1,95 @@
+
+Algorithme LesNotesEleves
+Variables: 
+    Tableau T[]: Entiers
+    Somme, N, i, compteur, Note, Temp: Entiers
+    Tri: Booléen
+    Moyenne, Min, Note: Réels
+
+#1 - Afficher les éléments du tableau :
+Début
+    Somme <-- 0
+    Ecrire("Saisir le nombre d'élèves : ")
+    Lire(N)
+    Reduimensionner T[N]
+
+    Pour i de 0 à N faire
+        Ecrire("Saisir la note de l'élève ", i + 1, " : ")
+        Lire(T[i])
+        Somme <-- Somme + T[i]
+    Fin Pour
+
+    Pour i de 0 à N faire
+        Ecrire("La note d'élève " , i + 1, " est : ", T[i])
+    Fin Pour
+
+#2 - Afficher le nombre de notes supérieures strictement à la moyenne de la classe :
+    Moyenne <-- Somme / N
+    Ecrire("La moyenne de la classe est : ", Moyenne)
+    Compteur <-- 0
+    Pour i de 0 à N faire
+        Si T[i] > Moyenne alors
+            Compteur <-- Compteur + 1
+        Fin Si
+    Fin Pour
+    Ecrire("Le nombre de notes supérieures à la moyenne est : ", Compteur)
+
+#3 - Afficher le minimum des éléments du tableau :
+    Min <-- T[0]
+    Pour i de 1 à N faire
+        Si T[i] < Min alors
+            Min <-- T[i]
+        Fin Si
+    Fin Pour
+    Ecrire("Le minimum des notes est : ", Min)
+
+#4 - Afficher le nombre d’occurrences d’un élément donné dans le tableau :
+    Ecrire("Saisir la note à rechercher : ")
+    Lire(Note)
+    Compteur <-- 0
+    Pour i de 0 à N faire
+        Si T[i] = Note alors
+            Compteur <-- Compteur + 1
+        Fin Si
+    Fin Pour
+    Ecrire("Le nombre d'occurrences de la note ", Note, " est : ", Compteur)
+
+#5 - Tester si le tableau est trié (croissant/décroissant/pas trié) :
+    Tri <-- Vrai
+    Pour i de 0 à N - 2 faire
+        Si T[i] > T[i + 1] alors
+            Tri <-- Faux
+        Fin Si
+    Fin Pour
+    Si Tri alors
+        Ecrire("Le tableau est trié par ordre croissant")
+    Sinon
+        Tri <-- Vrai
+        Pour i de 0 à N - 2 faire
+            Si T[i] < T[i + 1] alors
+                Tri <-- Faux
+            Fin Si
+        Fin Pour
+        Si Tri alors
+            Ecrire("Le tableau est trié par ordre décroissant")
+        Sinon
+            Ecrire("Le tableau n'est pas trié")
+        Fin Si
+    Fin Si
+
+#6 - Trier les éléments du tableau par ordre croissant :
+    Pour i de 0 à N - 1 faire
+        Pour j de 0 à N - 2 faire
+            Si T[j] > T[j + 1] alors
+                Temp <-- T[j]
+                T[j] <-- T[j + 1]
+                T[j + 1] <-- Temp
+            Fin Si
+        Fin Pour
+    Fin Pour
+
+    Ecrire("Le tableau trié par ordre croissant est : ")
+    Pour i de 0 à N faire
+        Ecrire(T[i])
+    Fin Pour
+Fin

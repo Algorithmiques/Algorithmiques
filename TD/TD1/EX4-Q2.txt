@@ -1,0 +1,30 @@
+#2 - Écrire un algorithme permettant de fusionner deux tableaux T1 et T2 dans un tableau T3, sachant que T1 et T2 sont déjà triés par ordre croissant, T3 doit aussi être trié.
+Algorithem fusionner_tableaux(T1, T2, T3)
+Variables:
+    Tableau T1[], T2[], T3[] : Entiers
+    i, j, k : Entiers
+    Début
+        i <-- 0
+        j <-- 0
+        k <-- 0
+        Tant que i < taille(T1) et j < taille(T2) faire
+            Si T1[i] < T2[j] alors
+                T3[k] <-- T1[i]
+                i <-- i + 1
+            Sinon
+                T3[k] <-- T2[j]
+                j <-- j + 1
+            Fin Si
+            k <-- k + 1
+        Fin Tant que
+        Tant que i < taille(T1) faire
+            T3[k] <-- T1[i]
+            i <-- i + 1
+            k <-- k + 1
+        Fin Tant que
+        Tant que j < taille(T2) faire
+            T3[k] <-- T2[j]
+            j <-- j + 1
+            k <-- k + 1
+        Fin Tant que
+    Fin

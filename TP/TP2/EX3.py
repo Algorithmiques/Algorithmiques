@@ -1,5 +1,5 @@
 Eleve = int(input("Entrer le nombre des eleves : "))
-Notes = int(input("Entrer le nombre des notes : "))
+Notes = int(input("Entrer le nombre des modules : "))
 
 T = [[] for _ in range(Eleve)]  
 Moy = []
